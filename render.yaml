@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: gourav
+    env: python
+    plan: free
+    buildCommand: pip install poetry && poetry install --no-root --only main
+    startCommand: poetry run python -m anjani
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: DB_URI
+        sync: false
+      - key: LOG_CHANNEL
+        sync: false
+      - key: OWNER_ID
+        sync: false
